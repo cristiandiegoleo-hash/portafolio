@@ -3,22 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cristian — Ingeniería Eléctrica</title>
+<title>Cristian Diego Guerra Marín — Ingeniero Eléctrico</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#10161D;
-    --bg-panel:#161D25;
-    --bg-panel-alt:#1B2531;
-    --line:#2A3542;
-    --text:#E7ECEF;
-    --text-muted:#8A96A3;
+    --bg:#0F151C;
+    --bg-panel:#161E27;
+    --bg-panel-alt:#1C2530;
+    --line:#2E3947;
+    --text:#EDF1F4;
+    --text-muted:#A6B2BE;
     --amber:#F2A93B;
-    --cyan:#56C2D6;
-    --red:#E5533D;
-    --radius:2px;
+    --cyan:#5FC9DB;
+    --radius:3px;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -30,76 +29,90 @@
     background:var(--bg);
     color:var(--text);
     font-family:'IBM Plex Sans', sans-serif;
-    line-height:1.6;
+    font-size:16px;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   a{color:inherit;}
 
   /* ---------- HERO ---------- */
   .hero{
-    min-height:100svh;
+    min-height:92svh;
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:6vh 5vw 4vh;
+    padding:8vh 5vw 5vh;
     position:relative;
     background:
-      radial-gradient(ellipse at 50% 0%, rgba(86,194,214,0.07), transparent 60%),
+      radial-gradient(ellipse at 50% 0%, rgba(95,201,219,0.06), transparent 60%),
       var(--bg);
   }
   .eyebrow{
     font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.35em;
-    font-size:0.7rem;
+    letter-spacing:0.3em;
+    font-size:0.72rem;
     color:var(--amber);
     text-transform:uppercase;
-    margin-bottom:1.4rem;
+    margin-bottom:1.5rem;
   }
   .hero h1{
     font-family:'Space Grotesk', sans-serif;
     font-weight:700;
-    font-size:clamp(2.6rem, 8vw, 5.2rem);
-    letter-spacing:-0.02em;
-    line-height:1.02;
+    font-size:clamp(2.1rem, 6vw, 3.6rem);
+    letter-spacing:-0.015em;
+    line-height:1.1;
   }
-  .hero h1 .blink{
+  .hero .role{
+    margin-top:0.8rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:clamp(0.85rem, 2vw, 1rem);
     color:var(--cyan);
-    animation:blink 1.4s steps(1) infinite;
+    letter-spacing:0.02em;
   }
-  @keyframes blink{ 50%{opacity:0;} }
   .hero .subtitle{
-    margin-top:1.1rem;
+    margin-top:1.4rem;
     color:var(--text-muted);
-    font-size:clamp(0.95rem, 2vw, 1.15rem);
-    max-width:38rem;
+    font-size:clamp(1rem, 2vw, 1.1rem);
+    max-width:42rem;
+    line-height:1.75;
   }
   .hero .subtitle strong{color:var(--text); font-weight:500;}
 
+  .hero-contact{
+    margin-top:1.8rem;
+    display:flex; flex-wrap:wrap; justify-content:center; gap:1.6rem;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.82rem;
+    color:var(--text-muted);
+  }
+  .hero-contact a{border-bottom:1px solid transparent; transition:border-color 0.2s, color 0.2s;}
+  .hero-contact a:hover{color:var(--cyan); border-color:var(--cyan);}
+
   /* ---------- SLD NAV (signature element) ---------- */
   .sld-nav{
-    margin-top:5rem;
+    margin-top:4.5rem;
     width:100%;
-    max-width:900px;
+    max-width:920px;
     position:relative;
   }
   .bus-line{
     height:2px;
     width:100%;
-    background:linear-gradient(90deg, transparent, var(--line) 8%, var(--line) 92%, transparent);
+    background:linear-gradient(90deg, transparent, var(--line) 6%, var(--line) 94%, transparent);
     position:relative;
     overflow:visible;
   }
   .bus-line::after{
     content:"";
     position:absolute;
-    top:0; left:0;
+    top:0; left:-40%;
     height:2px;
     width:40%;
     background:linear-gradient(90deg, transparent, var(--cyan), transparent);
-    opacity:0.55;
-    animation:energize 4s ease-in-out infinite;
+    opacity:0.5;
+    animation:energize 5s ease-in-out infinite;
   }
   @keyframes energize{
     0%{ left:-40%; }
@@ -115,8 +128,8 @@
     border:none;
     color:var(--text-muted);
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.68rem;
-    letter-spacing:0.08em;
+    font-size:0.66rem;
+    letter-spacing:0.06em;
     cursor:pointer;
     display:flex;
     flex-direction:column;
@@ -126,11 +139,9 @@
     flex:1;
     transition:color 0.25s ease;
   }
-  .node .drop{
-    width:1px; height:14px; background:var(--line);
-  }
+  .node .drop{ width:1px; height:14px; background:var(--line); }
   .node .breaker{
-    width:16px; height:16px;
+    width:15px; height:15px;
     border:1.5px solid var(--line);
     border-radius:50%;
     position:relative;
@@ -141,7 +152,7 @@
     content:"";
     position:absolute;
     top:50%; left:50%;
-    width:9px; height:1.5px;
+    width:8px; height:1.5px;
     background:var(--line);
     transform:translate(-50%,-50%) rotate(-45deg);
     transition:background 0.3s ease;
@@ -151,15 +162,15 @@
   .node.active{color:var(--cyan);}
   .node.active .breaker{
     border-color:var(--cyan);
-    background:rgba(86,194,214,0.12);
-    box-shadow:0 0 10px rgba(86,194,214,0.35);
+    background:rgba(95,201,219,0.12);
+    box-shadow:0 0 10px rgba(95,201,219,0.3);
   }
   .node.active .breaker::before{background:var(--cyan);}
   .node .label{white-space:nowrap;}
 
   /* ---------- MAIN / PANELS ---------- */
   main{
-    max-width:920px;
+    max-width:900px;
     margin:0 auto;
     padding:0 5vw 10vh;
   }
@@ -168,8 +179,8 @@
     background:var(--bg-panel);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:clamp(1.6rem, 4vw, 3rem);
-    margin-top:2.2rem;
+    padding:clamp(1.8rem, 4vw, 3.2rem);
+    margin-top:2.4rem;
     scroll-margin-top:2rem;
   }
   .panel::before, .panel::after{
@@ -187,23 +198,49 @@
     display:inline-block;
     font-family:'IBM Plex Mono', monospace;
     font-size:0.68rem;
-    letter-spacing:0.12em;
+    letter-spacing:0.1em;
     color:var(--amber);
     border:1px solid rgba(242,169,59,0.35);
-    padding:0.2rem 0.55rem;
+    padding:0.22rem 0.6rem;
     border-radius:1px;
-    margin-bottom:1.1rem;
+    margin-bottom:1.2rem;
   }
   .panel h2{
     font-family:'Space Grotesk', sans-serif;
     font-weight:700;
-    font-size:clamp(1.4rem, 3vw, 1.9rem);
+    font-size:clamp(1.4rem, 3vw, 1.85rem);
     letter-spacing:-0.01em;
-    margin-bottom:1.1rem;
+    margin-bottom:1.2rem;
   }
-  .panel p{color:var(--text-muted); max-width:60ch;}
-  .panel p + p{margin-top:0.9rem;}
-  .panel p strong{color:var(--text); font-weight:500;}
+  .panel > p{color:var(--text-muted); max-width:65ch; font-size:1rem;}
+  .panel > p + p{margin-top:0.9rem;}
+  .panel p strong, .panel li strong{color:var(--text); font-weight:500;}
+
+  /* Timeline (experiencia) — orden cronológico real */
+  .timeline{ margin-top:1.6rem; display:flex; flex-direction:column; gap:1.9rem; }
+  .tl-item{ border-left:2px solid var(--line); padding-left:1.3rem; position:relative; }
+  .tl-item::before{
+    content:"";
+    position:absolute; left:-5.5px; top:0.3rem;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--bg-panel); border:2px solid var(--cyan);
+  }
+  .tl-item .period{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; letter-spacing:0.05em; color:var(--cyan);
+    display:block; margin-bottom:0.35rem;
+  }
+  .tl-item h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-size:1.08rem; font-weight:600; color:var(--text);
+  }
+  .tl-item .org{ font-size:0.9rem; color:var(--text-muted); margin-top:0.15rem; margin-bottom:0.7rem; }
+  .tl-item ul{ margin-left:1.1rem; color:var(--text-muted); font-size:0.95rem; }
+  .tl-item li{ margin-bottom:0.4rem; }
+  .tl-item .achievement{
+    margin-top:0.7rem; padding-top:0.7rem; border-top:1px dashed var(--line);
+    font-size:0.92rem; color:var(--text-muted);
+  }
 
   .spec-grid{
     display:grid;
@@ -213,136 +250,99 @@
     margin-top:1.6rem;
     border:1px solid var(--line);
   }
-  .spec{
-    background:var(--bg-panel-alt);
-    padding:1.1rem 1.2rem;
-  }
+  .spec{ background:var(--bg-panel-alt); padding:1.1rem 1.2rem; }
   .spec .k{
     font-family:'IBM Plex Mono', monospace;
-    font-size:0.65rem;
-    letter-spacing:0.1em;
-    color:var(--cyan);
-    text-transform:uppercase;
-    display:block;
-    margin-bottom:0.45rem;
+    font-size:0.65rem; letter-spacing:0.1em; color:var(--cyan);
+    text-transform:uppercase; display:block; margin-bottom:0.5rem;
   }
-  .spec .v{font-size:0.92rem; color:var(--text);}
-  .spec .v span{display:block; color:var(--text-muted); font-size:0.85rem; margin-top:0.2rem;}
+  .spec .v{ font-size:0.92rem; color:var(--text); }
+  .spec .v span{ display:block; color:var(--text-muted); font-size:0.85rem; margin-top:0.2rem; }
 
-  .course-list{margin-top:1.4rem; display:flex; flex-direction:column; gap:1.3rem;}
-  .course{border-left:2px solid var(--line); padding-left:1.1rem;}
-  .course h3{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.85rem;
-    letter-spacing:0.03em;
-    color:var(--text);
-    margin-bottom:0.4rem;
+  .course-list{ margin-top:1.5rem; display:flex; flex-direction:column; gap:0.9rem; }
+  .course-row{
+    display:flex; justify-content:space-between; align-items:baseline; gap:1rem;
+    padding-bottom:0.9rem; border-bottom:1px solid var(--line);
+    font-size:0.95rem;
   }
-  .course p{font-size:0.92rem;}
+  .course-row:last-child{ border-bottom:none; padding-bottom:0; }
+  .course-row .name{ color:var(--text); }
+  .course-row .inst{ color:var(--text-muted); font-size:0.85rem; }
+  .course-row .date{
+    font-family:'IBM Plex Mono', monospace; font-size:0.78rem;
+    color:var(--text-muted); white-space:nowrap;
+  }
 
-  .project{
-    border-top:1px solid var(--line);
-    padding-top:1.6rem;
-    margin-top:1.6rem;
+  .badge-row{ display:flex; flex-wrap:wrap; gap:0.6rem; margin-top:1.5rem; }
+  .badge{
+    font-family:'IBM Plex Mono', monospace; font-size:0.75rem;
+    color:var(--text); border:1px solid var(--line);
+    padding:0.4rem 0.75rem; border-radius:1px;
+    background:var(--bg-panel-alt);
   }
-  .project:first-of-type{border-top:none; padding-top:0; margin-top:0;}
+
+  .project{ border-top:1px solid var(--line); padding-top:1.7rem; margin-top:1.7rem; }
+  .project:first-of-type{ border-top:none; padding-top:0; margin-top:0; }
   .project h3{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:1.15rem;
-    font-weight:700;
-    margin-bottom:0.5rem;
+    font-family:'Space Grotesk', sans-serif; font-size:1.15rem; font-weight:700; margin-bottom:0.6rem;
   }
-  .project .stack{
-    margin-top:0.8rem;
-    display:flex; flex-wrap:wrap; gap:0.5rem;
-  }
-  .stack span{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.68rem;
-    color:var(--text-muted);
-    border:1px solid var(--line);
-    padding:0.25rem 0.55rem;
-    border-radius:1px;
+  .placeholder-note{
+    font-family:'IBM Plex Mono', monospace; font-size:0.82rem;
+    color:var(--text-muted); border:1px dashed var(--line);
+    padding:1rem 1.2rem; border-radius:2px; background:var(--bg-panel-alt);
   }
 
-  .cv-panel{
-    text-align:center;
-    padding:clamp(2.2rem, 6vw, 3.6rem);
-  }
+  .cv-panel{ text-align:center; padding:clamp(2.2rem, 6vw, 3.6rem); }
   .cv-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:0.6rem;
-    margin-top:1.6rem;
-    background:var(--amber);
-    color:#1A1305;
-    font-family:'IBM Plex Mono', monospace;
-    font-weight:500;
-    font-size:0.85rem;
-    letter-spacing:0.05em;
-    text-decoration:none;
-    padding:0.85rem 1.6rem;
-    border-radius:1px;
+    display:inline-flex; align-items:center; gap:0.6rem; margin-top:1.6rem;
+    background:var(--amber); color:#1A1305;
+    font-family:'IBM Plex Mono', monospace; font-weight:500;
+    font-size:0.85rem; letter-spacing:0.05em; text-decoration:none;
+    padding:0.85rem 1.7rem; border-radius:1px;
     transition:transform 0.2s ease, box-shadow 0.2s ease;
   }
   .cv-btn:hover{ transform:translateY(-2px); box-shadow:0 6px 20px rgba(242,169,59,0.25); }
-  .contact-row{
-    margin-top:2rem;
-    display:flex; justify-content:center; gap:1.8rem; flex-wrap:wrap;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.8rem;
-    color:var(--text-muted);
-  }
-  .contact-row a{border-bottom:1px solid transparent; transition:border-color 0.2s, color 0.2s;}
-  .contact-row a:hover{color:var(--cyan); border-color:var(--cyan);}
 
   footer{
-    text-align:center;
-    padding:3rem 5vw 2.5rem;
-    color:var(--text-muted);
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    letter-spacing:0.05em;
-  }
-
-  .edit-note{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    color:var(--red);
-    margin-top:0.9rem;
-    opacity:0.85;
+    text-align:center; padding:3rem 5vw 2.5rem; color:var(--text-muted);
+    font-family:'IBM Plex Mono', monospace; font-size:0.72rem; letter-spacing:0.05em;
   }
 
   @media (max-width:640px){
-    .sld-nav{margin-top:3.5rem;}
-    .node .label{ writing-mode:vertical-rl; text-orientation:mixed; font-size:0.6rem; }
-    .nodes{align-items:flex-start;}
+    .sld-nav{ margin-top:3.2rem; }
+    .node .label{ writing-mode:vertical-rl; text-orientation:mixed; font-size:0.58rem; }
+    .nodes{ align-items:flex-start; }
+    .course-row{ flex-direction:column; align-items:flex-start; gap:0.2rem; }
   }
 
-  :focus-visible{
-    outline:2px solid var(--cyan);
-    outline-offset:3px;
-  }
+  :focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; }
 </style>
 </head>
 <body>
 
 <!-- ================= HERO ================= -->
 <header class="hero">
-  <div class="eyebrow">Ingeniería Eléctrica — Sistemas de Potencia</div>
-  <h1>Cristian<span class="blink">_</span></h1>
+  <div class="eyebrow">Ingeniería Eléctrica — Sistemas de Potencia y Mantenimiento Industrial</div>
+  <h1>Cristian Diego Guerra Marín</h1>
+  <div class="role">Ingeniero Eléctrico · Egresado UNMSM</div>
   <p class="subtitle">
-    Estudiante de <strong>Ingeniería Eléctrica</strong> en la UNMSM (FIEE).
-    Trabajo en el diseño y análisis de sistemas de potencia — subestaciones, grupos electrógenos
-    y transformadores — bajo normativa peruana e internacional.
+    Experiencia en <strong>mantenimiento eléctrico industrial</strong> y análisis de información de
+    mantenimiento preventivo y correctivo en operaciones mineras. Conocimientos en sistemas
+    eléctricos de potencia, gestión de activos, diagnóstico de fallas y seguridad eléctrica.
   </p>
+  <div class="hero-contact">
+    <a href="mailto:cdguerramarin@gmail.com">cdguerramarin@gmail.com</a>
+    <a href="tel:+51981595574">981 595 574</a>
+    <a href="https://www.linkedin.com/in/cdguerramarin/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
 
   <nav class="sld-nav" aria-label="Navegación principal">
     <div class="bus-line"></div>
     <div class="nodes">
       <button class="node" data-target="perfil"><span class="drop"></span><span class="breaker"></span><span class="label">PERFIL</span></button>
+      <button class="node" data-target="experiencia"><span class="drop"></span><span class="breaker"></span><span class="label">EXPERIENCIA</span></button>
       <button class="node" data-target="formacion"><span class="drop"></span><span class="breaker"></span><span class="label">FORMACIÓN</span></button>
-      <button class="node" data-target="tecnico"><span class="drop"></span><span class="breaker"></span><span class="label">ÁREAS TÉCNICAS</span></button>
+      <button class="node" data-target="herramientas"><span class="drop"></span><span class="breaker"></span><span class="label">HERRAMIENTAS</span></button>
       <button class="node" data-target="proyectos"><span class="drop"></span><span class="breaker"></span><span class="label">PROYECTOS</span></button>
       <button class="node" data-target="cv"><span class="drop"></span><span class="breaker"></span><span class="label">CV</span></button>
     </div>
@@ -354,91 +354,152 @@
   <!-- ================= PERFIL ================= -->
   <section id="perfil" class="panel">
     <span class="tag">PRF-01</span>
-    <h2>Perfil</h2>
+    <h2>Perfil profesional</h2>
     <p>
-      Estudiante de Ingeniería Eléctrica en la <strong>Universidad Nacional Mayor de San Marcos</strong>,
-      Facultad de Ingeniería Electrónica y Eléctrica (FIEE). Mi trabajo académico combina el diseño
-      de sistemas de potencia con la elaboración de reportes técnicos, siempre referenciado al marco
-      normativo peruano (<strong>CNE, NTCSE, COES-SINAC, OSINERGMIN</strong>) y a estándares
-      internacionales (<strong>IEC, IEEE</strong>).
+      Egresado de <strong>Ingeniería Eléctrica</strong> por la Universidad Nacional Mayor de San
+      Marcos (UNMSM), perteneciente al tercio superior y becario de PRONABEC por excelencia
+      académica. Cuento con experiencia en mantenimiento eléctrico industrial y análisis de
+      información de mantenimiento preventivo y correctivo en operaciones mineras.
     </p>
     <p>
-      <!-- EDITAR: agrega 2-3 líneas sobre tus intereses, objetivo profesional o el tipo de rol que buscas. -->
-      [ EDITAR: describe aquí tu objetivo profesional — por ejemplo, el tipo de práctica o puesto
-      que buscas dentro del sector eléctrico. ]
+      Poseo conocimientos en sistemas eléctricos de potencia, mantenimiento industrial, gestión de
+      activos, diagnóstico de fallas y seguridad eléctrica. Manejo herramientas como
+      <strong>SAP S/4HANA PM, Power BI, AutoCAD, DIgSILENT PowerFactory y Python</strong> para el
+      análisis y optimización de procesos. Me caracterizo por mi capacidad analítica, orientación a
+      resultados, aprendizaje continuo y compromiso con la seguridad, con disponibilidad para
+      laborar en campamento minero y contribuir a la continuidad operativa de los procesos.
     </p>
+  </section>
+
+  <!-- ================= EXPERIENCIA ================= -->
+  <section id="experiencia" class="panel">
+    <span class="tag">EXP-01</span>
+    <h2>Experiencia laboral</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="period">Abril 2026 — actualidad</span>
+        <h3>Técnico de Mantenimiento Eléctrico</h3>
+        <div class="org">Aleiz EIRL — Lima, Perú</div>
+        <ul>
+          <li>Ejecución de mantenimiento preventivo y correctivo en equipos eléctricos industriales.</li>
+          <li>Diagnóstico de fallas en sistemas eléctricos y tableros de distribución.</li>
+          <li>Inspección de instalaciones eléctricas para garantizar seguridad y operatividad.</li>
+          <li>Verificación de continuidad y correcto funcionamiento de equipos eléctricos.</li>
+          <li>Aplicación de normas de seguridad eléctrica en todas las actividades de mantenimiento.</li>
+        </ul>
+        <div class="achievement">
+          <strong>Logro:</strong> identificación de oportunidades de mejora en las inspecciones
+          eléctricas, orientadas a incrementar la eficiencia operativa.
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <span class="period">Enero 2026 — Marzo 2026</span>
+        <h3>Practicante Preprofesional del Área de Operaciones</h3>
+        <div class="org">Communications and Systems Development — Lima, Perú</div>
+        <ul>
+          <li>Análisis de información de mantenimiento preventivo y correctivo de equipos en unidades mineras, apoyando la toma de decisiones operativas.</li>
+          <li>Gestión del control de inventario, manteniendo actualizada la información de activos.</li>
+          <li>Análisis de datos mediante Power BI para la generación de reportes y soporte en la toma de decisiones.</li>
+          <li>Promoción de herramientas de inteligencia artificial para optimizar la gestión de información en operaciones.</li>
+        </ul>
+        <div class="achievement">
+          <strong>Logro:</strong> desarrollo de un agente de inteligencia artificial para la
+          automatización de reportes mensuales, integrando visualización de KPIs, lo que optimizó
+          el seguimiento de indicadores y mejoró la eficiencia en la gestión de información.
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ================= FORMACIÓN ================= -->
   <section id="formacion" class="panel">
     <span class="tag">EDU-01</span>
     <h2>Formación académica</h2>
-    <p><strong>Universidad Nacional Mayor de San Marcos</strong> — Facultad de Ingeniería Electrónica
-      y Eléctrica (FIEE), Ingeniería Eléctrica.
-      <span class="edit-note">[ EDITAR: agrega año de ingreso / ciclo actual / fecha estimada de egreso ]</span>
-    </p>
-
     <div class="course-list">
-      <div class="course">
-        <h3>Centrales Eléctricas II</h3>
-        <p>Diseño de subestaciones, ciberseguridad OT, escenarios de puesta en servicio y
-          procedimientos de corte de servicio programado. Cálculos de cortocircuito, puesta a tierra
-          y un artículo académico en formato IEEE de dos columnas integrando ciberseguridad OT.
-          Caracterización de instrumentos de prueba reales y sistemas de prueba en alta tensión, con
-          un caso real de subestación peruana (S.E. Trujillo Norte) y validación de transformador y
-          disyuntor bajo criterios de la norma IEEE Std 43. Contenido complementario sobre centrales
-          hidroeléctricas (C.H. Restitución, Electroperú) e integración al SEIN.</p>
+      <div class="course-row">
+        <div>
+          <div class="name">Ingeniería Eléctrica — Egresado</div>
+          <div class="inst">Universidad Nacional Mayor de San Marcos (UNMSM)</div>
+        </div>
+        <div class="date">abr. 2021 – jul. 2026</div>
       </div>
-      <div class="course">
-        <h3>Gestión de Mantenimiento</h3>
-        <p>Conceptos de OEE/OEEE (Disponibilidad, Desempeño, Calidad) aplicados al contexto de la
-          industria eléctrica, como base para el diseño de sistemas de gestión de mantenimiento.</p>
+    </div>
+    <div class="badge-row">
+      <span class="badge">Tercio superior</span>
+      <span class="badge">Becario PRONABEC — excelencia académica</span>
+    </div>
+
+    <h2 style="margin-top:2.4rem;">Formación complementaria</h2>
+    <div class="course-list">
+      <div class="course-row">
+        <div><div class="name">Celdas eléctricas de media tensión</div><div class="inst">Preditec</div></div>
+        <div class="date">oct. 2025</div>
+      </div>
+      <div class="course-row">
+        <div><div class="name">SAP S/4HANA PM — gestión de mantenimiento de planta</div><div class="inst">ACTI</div></div>
+        <div class="date">oct. – dic. 2025</div>
+      </div>
+      <div class="course-row">
+        <div><div class="name">Especialización en seguridad eléctrica industrial y minera</div><div class="inst">MAGNA</div></div>
+        <div class="date">sep. 2025</div>
+      </div>
+      <div class="course-row">
+        <div><div class="name">Taller formativo: aplicaciones de DIgSILENT PowerFactory</div><div class="inst">INEL</div></div>
+        <div class="date">sep. 2025</div>
+      </div>
+      <div class="course-row">
+        <div><div class="name">Mantenimiento predictivo, optimización de equipos y confiabilidad industrial</div><div class="inst">Global SOC</div></div>
+        <div class="date">abr. – ago. 2025</div>
+      </div>
+      <div class="course-row">
+        <div><div class="name">AutoCAD para electricistas</div><div class="inst">CECIIEP</div></div>
+        <div class="date">feb. – mar. 2025</div>
+      </div>
+      <div class="course-row">
+        <div><div class="name">Mantenimiento de instalaciones eléctricas en AT, MT y BT</div><div class="inst">WECHT Engineering S.A.C.</div></div>
+        <div class="date">ene. 2025</div>
+      </div>
+    </div>
+
+    <h2 style="margin-top:2.4rem;">Liderazgo y actividades extracurriculares</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <span class="period">Enero 2026 — actualidad</span>
+        <h3>Colaborador del área de proyectos</h3>
+        <div class="org">IEEE PES UNMSM</div>
+        <ul>
+          <li>Participación en el desarrollo de proyectos de ingeniería y tecnología.</li>
+          <li>Promoción de la investigación en temas de energía y sostenibilidad.</li>
+          <li>Elaboración de artículos y documentos técnicos especializados.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <span class="period">Enero 2025 — Diciembre 2025</span>
+        <h3>Subdirector del área de Marketing</h3>
+        <div class="org">IEEE PES UNMSM</div>
+        <ul>
+          <li>Liderazgo de un equipo de 8 colaboradores, planificando y ejecutando actividades mensuales.</li>
+          <li>Incremento de la asistencia a eventos en un 30% mediante un sistema de registro y seguimiento.</li>
+          <li>Gestión del cronograma de publicaciones, optimizando tiempos de entrega y difusión.</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <!-- ================= ÁREAS TÉCNICAS ================= -->
-  <section id="tecnico" class="panel">
+  <!-- ================= HERRAMIENTAS ================= -->
+  <section id="herramientas" class="panel">
     <span class="tag">SKL-01</span>
-    <h2>Áreas técnicas</h2>
-    <p>Focos recurrentes de trabajo dentro de sistemas de potencia:</p>
+    <h2>Herramientas, software e idiomas</h2>
     <div class="spec-grid">
-      <div class="spec">
-        <span class="k">Grupos electrógenos</span>
-        <div class="v">Unidades MODASA MP-515I operando en paralelo
-          <span>Motor Perkins 2506C-E15TAG3 · Alternador Stamford HCI 534 E1 · Control DSE 8610</span>
-        </div>
-      </div>
-      <div class="spec">
-        <span class="k">Transformadores de potencia</span>
-        <div class="v">Pruebas de circuito abierto / corto
-          <span>Grupos de conexión Dyn11 · Protección Buchholz / 87T</span>
-        </div>
-      </div>
-      <div class="spec">
-        <span class="k">Alternadores síncronos</span>
-        <div class="v">Pruebas OCC / SCC
-          <span>Análisis fasorial · Sincronización en paralelo</span>
-        </div>
-      </div>
-      <div class="spec">
-        <span class="k">Esquemas de barras</span>
-        <div class="v">Breaker-and-a-Half
-          <span>Main-and-Transfer Bus</span>
-        </div>
-      </div>
-      <div class="spec">
-        <span class="k">Instrumentos de prueba</span>
-        <div class="v">Megger TTR300
-          <span>OMICRON CIBANO 500 · Doble M4000</span>
-        </div>
-      </div>
-      <div class="spec">
-        <span class="k">Marco normativo</span>
-        <div class="v">CNE · NTCSE · COES-SINAC · OSINERGMIN
-          <span>IEC · IEEE</span>
-        </div>
-      </div>
+      <div class="spec"><span class="k">AutoCAD</span><div class="v">Nivel intermedio</div></div>
+      <div class="spec"><span class="k">MS Office</span><div class="v">Nivel intermedio</div></div>
+      <div class="spec"><span class="k">DIgSILENT PowerFactory</span><div class="v">Nivel básico</div></div>
+      <div class="spec"><span class="k">DLT-CAD</span><div class="v">Nivel básico</div></div>
+      <div class="spec"><span class="k">Python</span><div class="v">Nivel básico</div></div>
+      <div class="spec"><span class="k">Power BI</span><div class="v">Nivel intermedio</div></div>
+      <div class="spec"><span class="k">SAP S/4HANA PM</span><div class="v">Gestión de mantenimiento de planta</div></div>
+      <div class="spec"><span class="k">Inglés</span><div class="v">Nivel básico</div></div>
     </div>
   </section>
 
@@ -446,45 +507,17 @@
   <section id="proyectos" class="panel">
     <span class="tag">PRY-01</span>
     <h2>Proyectos</h2>
-
-    <div class="project">
-      <h3>ElectroMant SAC — Sistema CMMS</h3>
-      <p>Proyecto académico del curso Gestión de Mantenimiento: diseño de un sistema de gestión de
-        mantenimiento (CMMS) para una empresa ficticia de operación y mantenimiento eléctrico,
-        "ElectroMant SAC". Prototipo construido en Base44, con un enfoque de prompt único optimizado
-        para minimizar el consumo de créditos.</p>
-      <div class="stack"><span>CMMS</span><span>Base44</span><span>Gestión de mantenimiento</span></div>
-    </div>
-
-    <div class="project">
-      <h3>Generador de reportes de campo</h3>
-      <p>Aplicación web desplegada en Netlify que utiliza la API de Anthropic para generar
-        automáticamente reportes técnicos de campo eléctricos a partir de datos estructurados de
-        tableros (circuitos ITM, fases R/S/T, mediciones de carga), con notas de integración a n8n.</p>
-      <div class="stack"><span>Netlify</span><span>Anthropic API</span><span>n8n</span></div>
-    </div>
-
-    <p class="edit-note" style="margin-top:1.6rem;">[ EDITAR: agrega enlaces a repositorios, demos en
-      vivo o capturas de pantalla de cada proyecto si están disponibles públicamente. ]</p>
+    <p class="placeholder-note">Sección en actualización — aquí se agregarán los proyectos técnicos.</p>
   </section>
 
   <!-- ================= CV ================= -->
   <section id="cv" class="panel cv-panel">
     <span class="tag">DOC-01</span>
     <h2>Currículum vitae</h2>
-    <p>Descarga la versión completa en PDF, con el detalle de formación, cursos y proyectos.</p>
-    <a class="cv-btn" href="cv-cristian.pdf" download>
+    <p>Descarga la versión completa en PDF, con el detalle de formación, experiencia y proyectos.</p>
+    <a class="cv-btn" href="CV-Cristian-Guerra-Marin.pdf" download>
       ↓ Descargar CV (PDF)
     </a>
-    <p class="edit-note">[ EDITAR: sube tu archivo cv-cristian.pdf a la misma carpeta que este HTML,
-      o reemplaza el enlace por la URL donde lo alojes. ]</p>
-
-    <div class="contact-row">
-      <a href="mailto:tu-correo@ejemplo.com">tu-correo@ejemplo.com</a>
-      <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener">GitHub</a>
-    </div>
-    <p class="edit-note">[ EDITAR: reemplaza correo, LinkedIn y GitHub con tus enlaces reales. ]</p>
   </section>
 
 </main>
@@ -494,7 +527,6 @@
 </footer>
 
 <script>
-  // Scroll-spy: energiza el breaker del nodo correspondiente a la sección visible
   const sections = document.querySelectorAll('main .panel');
   const nodes = document.querySelectorAll('.node');
 
