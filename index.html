@@ -308,6 +308,43 @@
     background:var(--bg-panel-alt);
   }
 
+  .cert-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+    gap:0.9rem;
+    margin-top:1.5rem;
+  }
+  .cert-card{
+    background:var(--bg-panel-alt);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:1rem 1.1rem;
+    display:flex;
+    flex-direction:column;
+    gap:0.6rem;
+  }
+  .cert-card .name{ font-size:0.92rem; color:var(--text); line-height:1.4; }
+  .cert-card .inst{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; color:var(--text-muted); letter-spacing:0.03em;
+  }
+  .cert-link{
+    margin-top:0.2rem;
+    display:inline-flex; align-items:center; gap:0.4rem;
+    font-family:'IBM Plex Mono', monospace; font-size:0.75rem;
+    color:var(--cyan); text-decoration:none;
+    border-bottom:1px solid rgba(95,201,219,0.35);
+    width:fit-content;
+    transition:border-color 0.2s ease, color 0.2s ease;
+  }
+  .cert-link:hover{ border-color:var(--cyan); }
+  .cert-link.pending{
+    color:var(--text-muted);
+    border-bottom-color:var(--line);
+    cursor:default;
+    pointer-events:none;
+  }
+
   .project{ border-top:1px solid var(--line); padding-top:1.7rem; margin-top:1.7rem; }
   .project:first-of-type{ border-top:none; padding-top:0; margin-top:0; }
   .project h3{
@@ -415,34 +452,31 @@
         <span class="period">Abril 2026 — actualidad</span>
         <h3>Técnico de Mantenimiento Eléctrico</h3>
         <div class="org">Aleiz EIRL — Lima, Perú</div>
-        <ul>
-          <li>Ejecución de mantenimiento preventivo y correctivo en equipos eléctricos industriales.</li>
-          <li>Diagnóstico de fallas en sistemas eléctricos y tableros de distribución.</li>
-          <li>Inspección de instalaciones eléctricas para garantizar seguridad y operatividad.</li>
-          <li>Verificación de continuidad y correcto funcionamiento de equipos eléctricos.</li>
-          <li>Aplicación de normas de seguridad eléctrica en todas las actividades de mantenimiento.</li>
-        </ul>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          Mantenimiento preventivo y correctivo de equipos eléctricos industriales, diagnóstico de
+          fallas en tableros de distribución e inspecciones de seguridad eléctrica.
+        </p>
         <div class="achievement">
           <strong>Logro:</strong> identificación de oportunidades de mejora en las inspecciones
           eléctricas, orientadas a incrementar la eficiencia operativa.
         </div>
+        <a class="cert-link" href="certificados/laborales/aleiz-eirl.pdf" target="_blank" rel="noopener">↗ Ver certificado laboral</a>
       </div>
 
       <div class="tl-item">
         <span class="period">Enero 2026 — Marzo 2026</span>
         <h3>Practicante Preprofesional del Área de Operaciones</h3>
         <div class="org">Communications and Systems Development — Lima, Perú</div>
-        <ul>
-          <li>Análisis de información de mantenimiento preventivo y correctivo de equipos en unidades mineras, apoyando la toma de decisiones operativas.</li>
-          <li>Gestión del control de inventario, manteniendo actualizada la información de activos.</li>
-          <li>Análisis de datos mediante Power BI para la generación de reportes y soporte en la toma de decisiones.</li>
-          <li>Promoción de herramientas de inteligencia artificial para optimizar la gestión de información en operaciones.</li>
-        </ul>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          Análisis de información de mantenimiento en unidades mineras, gestión de inventario de
+          activos y reportes en Power BI para soporte a la toma de decisiones.
+        </p>
         <div class="achievement">
           <strong>Logro:</strong> desarrollo de un agente de inteligencia artificial para la
           automatización de reportes mensuales, integrando visualización de KPIs, lo que optimizó
           el seguimiento de indicadores y mejoró la eficiencia en la gestión de información.
         </div>
+        <a class="cert-link" href="certificados/laborales/csd.pdf" target="_blank" rel="noopener">↗ Ver certificado laboral</a>
       </div>
     </div>
   </section>
@@ -466,34 +500,61 @@
     </div>
 
     <h2 style="margin-top:2.4rem;">Formación complementaria</h2>
-    <div class="course-list">
-      <div class="course-row">
-        <div><div class="name">Celdas eléctricas de media tensión</div><div class="inst">Preditec</div></div>
-        <div class="date">oct. 2025</div>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.6rem; margin-bottom:0.4rem;">
+      Cada certificado respalda el curso correspondiente — haz clic en "Ver certificado" para revisarlo.
+    </p>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="name">Celdas eléctricas de media tensión</div>
+        <div class="inst">Preditec · oct. 2025</div>
+        <a class="cert-link" href="certificados/celdas-electricas-mt.pdf" target="_blank" rel="noopener">↗ Ver certificado</a>
       </div>
-      <div class="course-row">
-        <div><div class="name">SAP S/4HANA PM — gestión de mantenimiento de planta</div><div class="inst">ACTI</div></div>
-        <div class="date">oct. – dic. 2025</div>
+      <div class="cert-card">
+        <div class="name">SAP S/4HANA PM — gestión de mantenimiento de planta</div>
+        <div class="inst">ACTI · oct.–dic. 2025</div>
+        <a class="cert-link" href="certificados/sap-s4hana-pm.pdf" target="_blank" rel="noopener">↗ Ver certificado</a>
       </div>
-      <div class="course-row">
-        <div><div class="name">Especialización en seguridad eléctrica industrial y minera</div><div class="inst">MAGNA</div></div>
-        <div class="date">sep. 2025</div>
+      <div class="cert-card">
+        <div class="name">Especialización en seguridad eléctrica industrial y minera</div>
+        <div class="inst">MAGNA · sep. 2025</div>
+        <a class="cert-link" href="certificados/seguridad-electrica-industrial-minera.pdf" target="_blank" rel="noopener">↗ Ver certificado</a>
       </div>
-      <div class="course-row">
-        <div><div class="name">Taller formativo: aplicaciones de DIgSILENT PowerFactory</div><div class="inst">INEL</div></div>
-        <div class="date">sep. 2025</div>
+      <div class="cert-card">
+        <div class="name">Taller formativo: aplicaciones de DIgSILENT PowerFactory</div>
+        <div class="inst">INEL · sep. 2025</div>
+        <a class="cert-link" href="certificados/digsilent-powerfactory.pdf" target="_blank" rel="noopener">↗ Ver certificado</a>
       </div>
-      <div class="course-row">
-        <div><div class="name">Mantenimiento predictivo, optimización de equipos y confiabilidad industrial</div><div class="inst">Global SOC</div></div>
-        <div class="date">abr. – ago. 2025</div>
+      <div class="cert-card">
+        <div class="name">Mantenimiento predictivo, optimización de equipos y confiabilidad industrial</div>
+        <div class="inst">Global SOC · abr.–ago. 2025</div>
+        <a class="cert-link" href="certificados/mantenimiento-predictivo.pdf" target="_blank" rel="noopener">↗ Ver certificado</a>
       </div>
-      <div class="course-row">
-        <div><div class="name">AutoCAD para electricistas</div><div class="inst">CECIIEP</div></div>
-        <div class="date">feb. – mar. 2025</div>
+      <div class="cert-card">
+        <div class="name">AutoCAD para electricistas</div>
+        <div class="inst">CECIIEP · feb.–mar. 2025</div>
+        <a class="cert-link" href="certificados/autocad-electricistas.pdf" target="_blank" rel="noopener">↗ Ver certificado</a>
       </div>
-      <div class="course-row">
-        <div><div class="name">Mantenimiento de instalaciones eléctricas en AT, MT y BT</div><div class="inst">WECHT Engineering S.A.C.</div></div>
-        <div class="date">ene. 2025</div>
+      <div class="cert-card">
+        <div class="name">Mantenimiento de instalaciones eléctricas en AT, MT y BT</div>
+        <div class="inst">WECHT Engineering S.A.C. · ene. 2025</div>
+        <a class="cert-link" href="certificados/instalaciones-at-mt-bt.pdf" target="_blank" rel="noopener">↗ Ver certificado</a>
+      </div>
+      <div class="cert-card" style="border-style:dashed;">
+        <div class="name">Otros cursos</div>
+        <div class="inst">Certificados adicionales no listados arriba</div>
+        <a class="cert-link" href="certificados/otros/" target="_blank" rel="noopener">↗ Ver certificados</a>
+      </div>
+    </div>
+
+    <h2 style="margin-top:2.4rem;">Talleres y eventos asistidos</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-top:-0.6rem; margin-bottom:0.4rem;">
+      Charlas, talleres o eventos técnicos a los que asististe, con su constancia de participación.
+    </p>
+    <div class="cert-grid">
+      <div class="cert-card" style="border-style:dashed;">
+        <div class="name">Talleres y eventos</div>
+        <div class="inst">Constancias de participación</div>
+        <a class="cert-link" href="certificados/talleres/" target="_blank" rel="noopener">↗ Ver constancias</a>
       </div>
     </div>
 
@@ -503,21 +564,19 @@
         <span class="period">Enero 2026 — actualidad</span>
         <h3>Colaborador del área de proyectos</h3>
         <div class="org">IEEE PES UNMSM</div>
-        <ul>
-          <li>Participación en el desarrollo de proyectos de ingeniería y tecnología.</li>
-          <li>Promoción de la investigación en temas de energía y sostenibilidad.</li>
-          <li>Elaboración de artículos y documentos técnicos especializados.</li>
-        </ul>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          Desarrollo de proyectos de ingeniería y tecnología, investigación en energía y
+          sostenibilidad, y elaboración de artículos técnicos especializados.
+        </p>
       </div>
       <div class="tl-item">
         <span class="period">Enero 2025 — Diciembre 2025</span>
         <h3>Subdirector del área de Marketing</h3>
         <div class="org">IEEE PES UNMSM</div>
-        <ul>
-          <li>Liderazgo de un equipo de 8 colaboradores, planificando y ejecutando actividades mensuales.</li>
-          <li>Incremento de la asistencia a eventos en un 30% mediante un sistema de registro y seguimiento.</li>
-          <li>Gestión del cronograma de publicaciones, optimizando tiempos de entrega y difusión.</li>
-        </ul>
+        <p style="color:var(--text-muted); font-size:0.95rem;">
+          Liderazgo de un equipo de 8 colaboradores; incremento de la asistencia a eventos en un
+          30% mediante un sistema de registro y seguimiento.
+        </p>
       </div>
     </div>
   </section>
